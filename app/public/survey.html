@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container"> 
+        <h1>Survey Questions</h1>
+
+        <h3>About You</h3>
+        <h4>Name: </h4>
+        <form action="#">
+            <input type="text" name="firstname" id="firstname">
+            <br>
+            <h4>Link to URL:</h4>
+            <input type="text" name="photo" id="photo">
+            <br>           
+            <h4>Question 1:</h4>
+            <h6>You find it difficult to introduce yourself to other people.</h6>
+            <select name="q1" id="q1">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+            </select>
+            <h4>Question 2:</h4>
+            <h6>You often get so lost in thoughts that you ignore or forget your surroundings.</h6>
+            <select name="q2" id="q2">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+            
+                </select>
+            <h4>Question 3:</h4>
+            <h6>You try to respond to your e-mails as soon as possible and cannot stand a messy inbox.</h6>
+            <select name="q3" id="q3">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+            
+                </select>
+            <h4>Question 4:</h4>
+            <h6>You do not usually initiate conversations. </h6>
+            <select name="q4" id="q4">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+            
+                </select>
+            <h4>Question 5:</h4>
+            <h6>You rarely do something just out of sheer curiosity.</h6>
+            <select name="q5" id="q5">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+            
+            <br>
+        </select>
+            <h4>Question 6:</h4>
+            <h6>Being organized is more important to you than being adaptable.</h6>
+            <select name="q6" id="q6">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+                </select>
+            <br>
+            <h4>Question 7:</h4>
+            <h6>You are usually highly motivated and energetic.</h6>
+            <select name="q7" id="q7">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+                </select>
+            <br>
+            <h4>Question 8:</h4>
+            <h6>Winning a debate matters less to you than making sure no one gets upset.</h6>
+            <select name="q8" id="q8">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+                </select>
+            <br>
+            <h4>Question 9:</h4>
+            <h6>Your home and work environments are quite tidy.</h6>
+            <select name="q9" id="q9">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+                </select>
+            <br>
+            <h4>Question 10:</h4>
+            <h6>Your travel plans are usually well thought out.</h6>
+            <select name="q10" id="q10">
+                    <option value="1">1 (agree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (disagree)</option>
+                </select>
+            <br>
+            <input type="submit" name="survey" id="submit">
+            
+            </form>
+    </div>
+
+<!-- Trigger/Open The Modal -->
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Look who you matched with!</h3>
+    <h4 id="matchName"> </h4>
+    <img id="matchPic" src=""> 
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  //require("../routing/apiRoutes.js")(app);
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("submit");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+        var newFriend = {
+            name: $("#firstname").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+              $('#q1').val(),
+              $('#q2').val(),
+              $('#q3').val(),
+              $('#q4').val(),
+              $('#q5').val(),
+              $('#q6').val(),
+              $('#q7').val(),
+              $('#q8').val(),
+              $('#q9').val(),
+              $('#q10').val(),
+          ]
+        };
+       
+            var currentURL = window.location.origin;
+            //AJAX posts the data to friends API.
+            $.post(currentURL + "/api/friends", newFriend, function(data) {
+                //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                $("#matchName").text(data.name);
+               $("#matchPic").attr("src", data.photo);
+               console.log(data)
+               console.log(data.name)
+            });
+            
+                            
+            //clear form after submission
+            $('#name').val("");
+            $('#photo').val("");
+            $('#q1').val("");
+            $('#q2').val("");
+            $('#q3').val("");
+            $('#q4').val("");
+            $('#q5').val("");
+            $('#q6').val("");
+            $('#q7').val("");
+            $('#q8').val("");
+            $('#q9').val("");
+            $('#q10').val("");
+        
+      });
+    </script>
+</body>
+</html>
+
+
