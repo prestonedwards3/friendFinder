@@ -6,6 +6,10 @@ app.get("/api/friends", function(req, res) {
     return res.json(friends);
   });
 
+  app.get("/survey", function(req, res) {
+    return res.json(friends);
+  });
+
   app.post("/api/friends", function(req, res) {
     //push data to an array of friends 
     var newFriend = req.body;
